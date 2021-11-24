@@ -1,0 +1,37 @@
+.main-popular{
+    display: flex;
+    flex-direction: column;
+    margin: 0 50px;
+    padding: 20px;
+    position: relative;
+    border: 2px solid #FFE9D9;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(227,133,100,0.3);
+    border-radius: 10px;
+}
+.popular-head{
+    display: flex;
+    justify-content: center;
+}
+.popular-head-title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.popular-content{
+    display: flex;
+    flex-direction: column;
+}
+.popular-content-table{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.popular-content-item{
+    position: relative;
+    min-height: 1px;
+}
+.popular-content-item-img{
+    width: 150px;
+}

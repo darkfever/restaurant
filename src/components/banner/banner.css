@@ -1,0 +1,59 @@
+.banner{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.enroll-landing-banner{
+    position: relative;
+    min-height: 476px;
+    background: linear-gradient(90deg, transparent 0%, #FCF9F6 55%, rgba(249,246,240,0) 60%),url('images/people.png') no-repeat right,url('images/stock.png') no-repeat left;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+}
+.banner-text{
+    width: 80%;
+    font-size: 42px;
+    line-height: 56px;
+    font-weight: bold !important;
+    color: #ff5200;
+    padding: 35px 50px 20px;
+}
+.banner-content{
+    display: flex;
+    margin: 0 50px;
+}
+.banner-content-item{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    width: 280px;
+}
+.banner-content-item-head{
+    font-size: 36px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.banner-button{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    user-select: none;
+    color: #fff;
+    background-color: #f46d3e;
+    border-color: #f46d3e;
+    text-decoration: none;
+}
+.banner-button:hover{
+    color: rgb(66, 31, 31);
+}

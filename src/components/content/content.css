@@ -1,0 +1,112 @@
+.content{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.content-stats{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+}
+.content-stats-content{
+    display: flex;
+    flex-direction: column;
+}
+.content-stats-title{
+    width: 60%;
+    color: #ff5200;
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.content-stats-img{
+    width: 30px;
+    height: 30px;
+}
+.content-stats-main{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+.stats-number{
+    margin-left: 10px;
+    color: #f2d57e;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1;
+    text-align: right;
+}
+.stats-text{
+    margin-left: 10px;
+    max-width: 230px;
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #aaa;
+}
+.content-slider{
+    margin: 0 50px;
+}
+.content-slider-img{
+    width: 100%;
+}
+.dots{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.dot{
+    background-color: #ff5200;
+    border-color: #ff5200;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 50%;
+    content: "";
+}
+.dish-list{
+    margin: 0 50px;
+}
+.dish-list-item{
+    display: flex;
+    justify-content: space-between;
+}
+.dish{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dish-title{
+    text-decoration: none;
+    font-size: 18px;
+}
+.dish-nav-btn{
+    display: flex;
+    justify-content: center;
+}
+.dish-btn{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #f46d3e;
+    background-color: transparent;
+    border-color: #f46d3e;
+}
+.place-type-cards{
+    display: flex;
+}
