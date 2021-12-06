@@ -5,7 +5,8 @@ const initialState = {
     isLoading: false,
     signUpResponse: '',
     error: '',
-    isAuth: false
+    isAuth: false,
+    userRole: ''
 }
 
 export default function authReducer(state = initialState, action){
@@ -19,7 +20,9 @@ export default function authReducer(state = initialState, action){
         case types.SING_IN:
             return { ...state, isLoading: true }
         case types.SET_CURRENT_USER:
-            return { ...state, isLoading: false, isAuth: !isEmpty(action.payload) }
+            return { ...state, isLoading: false, isAuth: !isEmpty(action.payload), userRole: action.payload.role }
+        case types.SING_IN_FAILED:
+            return { ...state, isLoading: false, error: action.error }
         default:
             return state
     }

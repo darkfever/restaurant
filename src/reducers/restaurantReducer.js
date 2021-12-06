@@ -4,6 +4,7 @@ const initialState = {
     isLoading: false,
     restaurant: {},
     restaurants: [],
+    restaurantItem: {},
     error: '',
     total: 0
 }
@@ -50,6 +51,12 @@ export default function restaurantReducer(state = initialState, action) {
         case types.SEARCH_RESTAURANT_SUCCESS:
             return { ...state, isLoading: false, restaurants: action.payload.restaurants, total: action.payload.total }
         case types.SEARCH_RESTAURANT_FAILED:
+            return { ...state, isLoading: false, error: action.error }
+        case types.GET_RESTAURANT:
+            return { ...state, isLoading: true }
+        case types.GET_RESTAURANT_SUCCESS:
+            return { ...state, isLoading: false, restaurantItem: action.payload }
+        case types.GET_RESTAURANT_FAILED:
             return { ...state, isLoading: false, error: action.error }
         default:
             return state

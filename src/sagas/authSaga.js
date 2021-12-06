@@ -5,10 +5,11 @@ import jwt_decode from 'jwt-decode'
 import setAuthToken from '../utils/setAuthToken';
 
 function* signUp(action){
-    const { data } = action;
+    const { data, history } = action;
     try {
         const authResponse = yield axios.post('http://localhost:9000/api/users/register', data).then(res => res.data)
         yield put({type: types.SING_UP_SUCCESS, payload: authResponse})
+        history.push('/signin')
     } catch(error) {
         yield put({ type: types.SING_UP_FAILED, error })
     }
@@ -18,12 +19,16 @@ function* signIn(action){
     const { data, history } = action
     try{
         const authResponse = yield axios.post('http://localhost:9000/api/users/login', data).then(res => res.data)
-        const { token } = authResponse
+        const { token, role } = authResponse
         setAuthToken(token)
         localStorage.setItem('token', token)
         const decoded = jwt_decode(token)
-        yield put({type: types.SET_CURRENT_USER, payload: decoded})
-        history.push('/dashboard')
+        yield put({type: types.SET_CURRENT_USER, payload: {...decoded, role }})
+        if (authResponse.role === 'admin'){
+            history.push('/dashboard')
+        } else {
+            history.push('/')
+        }
     } catch(error) {
         yield put({ type: types.SING_IN_FAILED, error})
     }

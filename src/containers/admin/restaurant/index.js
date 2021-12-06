@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
-import { Button, Table, Modal, Input, Select, Upload, message } from 'antd'
+import { Button, Table, Modal, Input, Select, Upload, message, Spin } from 'antd'
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import * as restaurantActions from '../../actions/restaurantActions'
-import * as kitchenActions from '../../actions/kitchenActions'
+import * as restaurantActions from '../../../actions/restaurantActions'
+import * as kitchenActions from '../../../actions/kitchenActions'
 import "../restaurant/restaurant.css"
 
 function Restaurant(props) {
@@ -73,7 +73,7 @@ function Restaurant(props) {
             dataIndex: 'image',
             key: 'image',
             render: (text, data) => (
-                <img className="restaurant_image" src={`http://localhost:9000/${data.image}`} alt="image" />
+                <img className="restaurant_image" src={`http://localhost:9000/${data.image}`} alt="restaurant_image" />
             ),
         },
         {
@@ -129,9 +129,13 @@ function Restaurant(props) {
     ];
 
     useEffect(() => {
-        // props.restaurantActions.fetchRestaurants()
         props.restaurantActions.searchRestaurants(search)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [search])
+
+    useEffect(() => {
         props.kitchenActions.fetchKitchens()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const data = props.restaurants.map((item, i) => {
@@ -217,8 +221,11 @@ function Restaurant(props) {
         }
         
     }
+    const onPagination = (e) => {
+        setSearch({query: '', page: e.current})
+    }
     return (
-        <div>
+        <Spin spinning={props.isLoading} size="large">
             <div className="top">
                 <Button onClick={() => setIsModalVisible(true)}>Add restaurant</Button>
                 <div className="search_block">
@@ -230,7 +237,7 @@ function Restaurant(props) {
                     <Select className="filter" onChange={onChoose}>{kitchen_data}<Option value="all">все</Option></Select>
                 </div>
             </div>
-            <Table dataSource={data} columns={columns} pagination={{total: Number(props.total), pageSize: 6 }} />
+            <Table dataSource={data} columns={columns} pagination={{total: Number(props.total), pageSize: 6 }} onChange={onPagination} />
             <Modal title="Creating restaurant" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <Input className="input_restaurant" name="name" placeholder="name" value={restaurant.name} onChange={onChange} />
                 <Select
@@ -246,7 +253,7 @@ function Restaurant(props) {
                 >
                     {kitchen_data}
                 </Select>
-                {restaurant.image ? <><img className="restaurant_image input_restaurant" src={`http://localhost:9000/${restaurant.image}`} alt="image" />
+                {restaurant.image ? <><img className="restaurant_image input_restaurant" src={`http://localhost:9000/${restaurant.image}`} alt="input_restaurant" />
                 <Button onClick={deleteImg}>Delete</Button></> : <Upload className="input_restaurant" {...propsUpload}>
                     <Button>Click to Upload</Button>
                 </Upload>}
@@ -256,13 +263,14 @@ function Restaurant(props) {
                 <Input className="input_restaurant" name="averageBill" placeholder="averageBill" value={restaurant.averageBill} onChange={onChange} />
                 <Input className="input_restaurant" name="rate" placeholder="rate" value={restaurant.rate} onChange={onChange} />
             </Modal>
-        </div>
+        </Spin>
     )
 }
 const mapStateToProps = state => ({
     restaurants: state.restaurantReducer.restaurants,
     total: state.restaurantReducer.total,
-    kitchens: state.kitchenReducer.kitchens
+    kitchens: state.kitchenReducer.kitchens,
+    isLoading: state.kitchenReducer.isLoading
 })
 
 const mapDispatchToProps = dispatch => ({

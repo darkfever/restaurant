@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
-import { Button, Table, Modal, Input } from 'antd'
+import { Button, Table, Modal, Input, Spin } from 'antd'
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import * as kitchenActions from '../../actions/kitchenActions'
+import * as kitchenActions from '../../../actions/kitchenActions'
 
 function Kitchen(props){
     const [kitchen, setKitchen] = useState({id: '', name: ''})
@@ -69,17 +69,18 @@ function Kitchen(props){
     }
 
     return (
-        <div>
+        <Spin spinning = { props.isLoading } size = "large">
             <Button onClick={() => setIsModalVisible(true)}>Add kitchen</Button>
             <Table dataSource={data} columns={columns} />
             <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <Input name="name" placeholder="name" value={kitchen.name} onChange={onChange}/>
             </Modal>
-        </div>
+        </Spin>
     )
 }
 const mapStateToProps = state => ({
-    kitchens: state.kitchenReducer.kitchens
+    kitchens: state.kitchenReducer.kitchens,
+    isLoading: state.kitchenReducer.isLoading
 })
 
 const mapDispatchToProps = dispatch => ({

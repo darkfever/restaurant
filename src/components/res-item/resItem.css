@@ -1,0 +1,147 @@
+.restaurant-item{
+    margin: 20px 50px;
+}
+.res-item-title{
+    margin-bottom: 20px;
+    font-size: 38px;
+    display: flex;
+    font-weight: 700;
+    color: black;
+    justify-content: center;
+}
+.res-item-buttons{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.res-item-btn{
+    color: #1672ff;
+    border-color: #ced4da!important;
+    font-size: 18px;
+    height: 36px;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+.res-item-btn:hover{
+    color: #000;
+    background-color: #ffeaaa;
+}
+.res-item-counter{
+    position: relative;
+    left: 6px;
+    color: #777777;
+    font-size: 18px;
+}
+.res-item-image{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+.res-item-body{
+    background-color: #ffe9d9;
+    margin: 20px 0;
+    padding: 30px;
+}
+.res-item-name{
+    font-size: 26px;
+    font-weight: 800;
+    color: black;
+}
+.res-item-rate{
+    margin: 10px 0;
+}
+.res-item-icons{
+    width: 60px;
+    object-fit:cover;
+}
+.res-item-data{
+    display: flex;
+    margin: 20px 0;
+    justify-content: space-between;
+}
+.res-item-data-content{
+    display: flex;
+}
+.res-item-desc{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.res-item-kitchen{
+    display: flex;
+}
+.kitchen-name{
+    margin-right: 10px;
+}
+.res-item-kitchens{
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+.place-info-list__item{
+    margin: 20px 0;
+}
+.place-info-list__icon{
+    width: 50px;
+    font-size: 36px;
+    text-shadow: 0 10px 15px rgb(174 143 121 / 50%);
+}
+.map-btn{
+    background-color: #ffe9d9;
+    border: 2px solid #000!important;
+    border-radius: 10px!important;
+}
+.res-item-bron{
+    color: whitesmoke;
+    background-color: #f46d3e;
+    border-color: #f46d3e!important;
+    border-radius: 10px!important;
+    font-size: 18px;
+    height: 36px;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+.res-item-bron:hover{
+    color: whitesmoke;
+    background-color: #b15739;
+    border-color: black!important;
+}
+.review-title{
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.review-content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+.review-user-name{
+    margin-bottom: 4px;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+}
+.review-user-text{
+    white-space: normal;
+    word-wrap: normal;
+}
+.review-user-date{
+    margin-top: 16px;
+    padding-bottom: 16px;
+    color: #6b6b6b;
+}
+.review-card{
+    width: 31%;
+    height: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px 20px 0;
+    overflow: hidden;
+    font-size: 18px;
+    background-color: #fff;
+    border: 2px solid #ffe9d9;
+    border-radius: 4px;
+}

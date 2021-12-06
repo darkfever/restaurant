@@ -5,12 +5,17 @@ import { Provider } from 'react-redux';
 import Signup from './containers/signUp';
 import Signin from './containers/signIn';
 import Main from './containers/main';
+import RestaurantUser from './containers/user/restaurant'
+import UserOrders from './containers/user/order';
 import 'antd/dist/antd.css';
 import setAuthToken from './utils/setAuthToken'
 import * as types from './actions/types'
 import jwt_decode from 'jwt-decode'
 import Dashboard from './containers/dashboard'
 import PrivateRoute from './components/private-route';
+import AdminRoute from './components/admin-route';
+import restaurantById from './containers/restaurant-by-id';
+import UserFavorites from './containers/user/favorite'
 
 const store = configureStore()
 
@@ -35,7 +40,11 @@ function App() {
                     <Route exact path="/" component={Main} />
                     <Route exact path="/signin" component={Signin} />
                     <Route exact path="/signup" component={Signup} />
-                    <PrivateRoute path={`/dashboard`} component={Dashboard} />
+                    <Route exact path="/restaurant" component={RestaurantUser} />
+                    <Route exact path="/restaurant/:id" component={restaurantById} />
+                    <AdminRoute path={`/dashboard`} component={Dashboard} />
+                    <PrivateRoute path={`/user-orders`} component={UserOrders} />
+                    <PrivateRoute path={`/user-fav`} component={UserFavorites} />
                 </Switch>
             </Router>
         </Provider>

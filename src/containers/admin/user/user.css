@@ -1,0 +1,22 @@
+.action-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.action-button-block{
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
+    width: 84px;
+}
+.action-button-unblock{
+    color: white;
+    background-color: green;
+    border-radius: 10px;
+    width: 84px;
+}
+.action-button-block:hover{
+    background-color: black;
+}
+.action-button-unblock:hover{
+    background-color: black;
+}

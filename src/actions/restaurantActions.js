@@ -23,3 +23,7 @@ export function filterRestaurants(data) {
 export function searchRestaurants(data) {
     return { type: types.SEARCH_RESTAURANT, data }
 }
+
+export function getRestaurant(data) {
+    return { type: types.GET_RESTAURANT, data }
+}

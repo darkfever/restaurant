@@ -1,7 +1,7 @@
 import * as types from './types'
 
-export function signUp(data) {
-    return {type: types.SING_UP, data}
+export function signUp(data, history) {
+    return { type: types.SING_UP, data, history }
 }
 
 export function signIn(data, history) {

@@ -1,0 +1,17 @@
+.own-favorites{
+    margin: 50px 50px;
+}
+.own-favorites-title{
+    margin-bottom: 20px;
+    font-size: 28px;
+    display: flex;
+    font-weight: 700;
+    color: #ff5200;
+    justify-content: center;
+}
+.favorites-table{
+    border: 1px solid red;
+}
+.favorite-image{
+    width: 30%;
+}

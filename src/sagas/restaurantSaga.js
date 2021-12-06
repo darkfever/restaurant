@@ -74,6 +74,15 @@ function* searchRestaurants(action) {
     }
 }
 
+function* getRestaurant(action) {
+    try {
+        const restaurant = yield axios.get(`http://localhost:9000/api/restaurant/${action.data}`).then(res => res.data)
+        yield put({ type: types.GET_RESTAURANT_SUCCESS, payload: restaurant })
+    } catch (error) {
+        yield put({ type: types.GET_RESTAURANT_FAILED, error })
+    }
+}
+
 export function* restaurantSaga() {
     yield all([
         yield takeLatest(types.FETCH_RESTAURANTS, fetchRestaurants),
@@ -81,6 +90,7 @@ export function* restaurantSaga() {
         yield takeLatest(types.DELETE_RESTAURANT, deleteRestaurant),
         yield takeLatest(types.EDIT_RESTAURANT, editRestaurant),
         yield takeLatest(types.FILTER_RESTAURANT, filterRestaurants),
-        yield takeLatest(types.SEARCH_RESTAURANT, searchRestaurants)
+        yield takeLatest(types.SEARCH_RESTAURANT, searchRestaurants),
+        yield takeLatest(types.GET_RESTAURANT, getRestaurant),
     ])
 }

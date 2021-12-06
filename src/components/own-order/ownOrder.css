@@ -1,0 +1,14 @@
+.own-orders{
+    margin: 50px 50px;
+}
+.own-orders-title{
+    margin-bottom: 20px;
+    font-size: 28px;
+    display: flex;
+    font-weight: 700;
+    color: #ff5200;
+    justify-content: center;
+}
+.order-table{
+    border: 1px solid red;
+}

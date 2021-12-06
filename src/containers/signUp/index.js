@@ -7,7 +7,7 @@ import * as authActions from '../../actions/authActions'
 function Signup(props){
     const onFinish = (values) => {
         console.log('Success:', values);
-        props.authActions.signUp(values)
+        props.authActions.signUp(values, props.history)
     };
 
     const onFinishFailed = (errorInfo) => {

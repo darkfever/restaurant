@@ -4,13 +4,15 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as authActions from '../../actions/authActions'
 import { withRouter } from 'react-router-dom'
+import '../signIn/signin.css'
 
 function Signin(props) {
+    const error = props?.error?.response?.data?.error
     const onFinish = (values) => {
         console.log('Success:', values);
         props.authActions.signIn(values, props.history)
     };
-
+    
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
@@ -26,6 +28,7 @@ function Signin(props) {
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
             >
+                <div className="sign-in-error">{error !== undefined ? `${error}!` : ''}</div>
                 <Form.Item
                     name="email"
                     label="E-mail"
@@ -65,7 +68,8 @@ function Signin(props) {
 }
 
 const mapStateToProps = state => ({
-    isLoading: state.authReducer.isLoading
+    isLoading: state.authReducer.isLoading,
+    error: state.authReducer.error
 })
 
 const mapDispatchToProps = dispatch => ({

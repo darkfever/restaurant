@@ -1,19 +1,18 @@
 .header{
+    margin: 20px 50px;
     display: flex;
     flex-direction: column;
 }
 .header-top{
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
     align-items: center;
-    margin: 20px 20px;
 }
 .header-bottom{
     display: flex;
-    margin-top: 50px;
     align-items: center;
     justify-content: space-between;
+    margin-top: 20px;
 }
 .left-nav{
     display: flex;
@@ -55,7 +54,6 @@
 .header-nav__special{
     width: 350px;
     display: flex;
-    margin: 10px 10px;
     justify-content: space-between;
 }
 .sale-mark{

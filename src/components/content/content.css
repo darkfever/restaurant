@@ -108,5 +108,125 @@
     border-color: #f46d3e;
 }
 .place-type-cards{
+    margin: 20px 50px;
     display: flex;
+    justify-content: space-between;
+}
+.place-type-card{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    height: 190px;
+    width: 30%;
+    overflow: hidden;
+    background-color: #020204;
+    border-radius: 8px;
+    box-shadow: 1 4px 20px rgba(227,133,100,0.3);
+}
+.place-type-card-content{
+    position: relative;
+    height: 190px;
+    width: 100%;
+    overflow: hidden;
+    color: rgb(252, 246, 246);
+    background-color: #020204;
+    border-radius: 8px;
+    box-shadow: 1 4px 20px rgba(227,133,100,0.3);
+    padding: 25px 15px 20px;
+}
+.place-type-card__title{
+    text-decoration: none;
+    color: blanchedalmond;
+    font-size: 21px;
+    font-weight: 700;
+}
+.place-type-card__text{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+.place-type-card__button{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    user-select: none;
+    border-color: white;
+}
+.place-type-card__button:hover{
+    color: violet;
+    border-color: red;
+}
+.content-rating{
+    margin: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.content-rating-card{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 30%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(227,133,100,0.3);
+}
+.content-rating-card-img{
+    width: 100%;
+}
+.content-rating-card-title{
+    margin: 10px 20px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.content-rating-card-rate{
+    margin: 0 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.reviews{
+    text-decoration: none;
+    font-size: 18px;
+}
+.rating-all-restaurants{
+    margin: 20px 50px;
+}
+.btn-all-restaurants{
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 18px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    user-select: none;
+    color: #f46d3e;
+    background-color: transparent;
+    border-color: #f46d3e;
+}
+.btn-all-restaurants:hover{
+    color: #f46d3e !important;
+    background-color: #ffe9d9 !important;
+    border-color: #f46d3e !important;
 }
